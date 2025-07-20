@@ -1,6 +1,8 @@
 include: package:very_good_analysis/analysis_options.yaml
 
 analyzer:
+  errors:
+    depend_on_referenced_packages: false
   language:
     strict-inference: false
     strict-raw-types: false
@@ -13,3 +15,4 @@ linter:
     unnecessary_lambdas: false
     prefer_int_literals: false
     comment_references: false
+    document_ignores: true

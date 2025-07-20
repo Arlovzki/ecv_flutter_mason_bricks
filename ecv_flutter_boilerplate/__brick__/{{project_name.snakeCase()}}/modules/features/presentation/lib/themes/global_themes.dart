@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:presentation/themes/swatches/global_swatches.dart';
 
 /// The global light theme.
-final globalLightTheme = _createGlobalThemeData(
+final ThemeData globalLightTheme = _createGlobalThemeData(
   accentColor: satinGold,
   brightness: Brightness.light,
   primarySwatch: delftBlue,
@@ -11,7 +11,7 @@ final globalLightTheme = _createGlobalThemeData(
 );
 
 /// The global dark theme.
-final globalDarkTheme = _createGlobalThemeData(
+final ThemeData globalDarkTheme = _createGlobalThemeData(
   accentColor: satinGold,
   brightness: Brightness.dark,
   primarySwatch: delftBlue,
@@ -27,9 +27,7 @@ const defaultButtonRadius = 100.0;
 /// Defines the default padding of the screen.
 const defaultScreenPadding = 16.0;
 
-TextTheme _createTextTheme({
-  required Brightness brightness,
-}) {
+TextTheme _createTextTheme({required Brightness brightness}) {
   return GoogleFonts.montserratTextTheme().apply(
     bodyColor: brightness == Brightness.light
         ? ThemeData.light().textTheme.bodyLarge!.color
@@ -49,8 +47,9 @@ ThemeData _createGlobalThemeData({
   final primaryColor = primarySwatch;
 
   return ThemeData(
-    scaffoldBackgroundColor:
-        brightness == Brightness.light ? Colors.white : Colors.white,
+    scaffoldBackgroundColor: brightness == Brightness.light
+        ? Colors.white
+        : Colors.white,
     primaryColor: primaryColor,
     colorScheme: ColorScheme.fromSwatch(
       primarySwatch: primaryColor,
@@ -58,7 +57,7 @@ ThemeData _createGlobalThemeData({
       brightness: brightness,
     ),
     canvasColor: brightness == Brightness.light ? Colors.white : Colors.white,
-    dialogTheme: DialogTheme(
+    dialogTheme: DialogThemeData(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(defaultCornerRadius),
       ),
@@ -73,21 +72,24 @@ ThemeData _createGlobalThemeData({
         fontSize: 28,
       ),
       color: primaryColor,
-      iconTheme: IconThemeData(
-        color: accentColor,
-      ),
+      iconTheme: IconThemeData(color: accentColor),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: brightness == Brightness.light ? Colors.white : null,
       selectedItemColor: primaryColor,
-      unselectedItemColor:
-          brightness == Brightness.light ? Colors.black38 : Colors.white38,
+      unselectedItemColor: brightness == Brightness.light
+          ? Colors.black38
+          : Colors.white38,
       showUnselectedLabels: true,
       type: BottomNavigationBarType.fixed,
-      selectedLabelStyle:
-          const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-      unselectedLabelStyle:
-          const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+      selectedLabelStyle: const TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.bold,
+      ),
+      unselectedLabelStyle: const TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.bold,
+      ),
     ),
     textTheme: textTheme,
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -115,32 +117,26 @@ ThemeData _createGlobalThemeData({
     radioTheme: RadioThemeData(
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       visualDensity: VisualDensity.compact,
-      fillColor: MaterialStateProperty.resolveWith(
-        (states) {
-          if (states.contains(MaterialState.selected)) {
-            return primaryColor;
-          }
+      fillColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
+          return primaryColor;
+        }
 
-          return brightness == Brightness.light
-              ? Colors.black12
-              : Colors.white24;
-        },
-      ),
+        return brightness == Brightness.light ? Colors.black12 : Colors.white24;
+      }),
     ),
     sliderTheme: const SliderThemeData(
-      rangeThumbShape:
-          RoundRangeSliderThumbShape(enabledThumbRadius: 12, elevation: 3),
+      rangeThumbShape: RoundRangeSliderThumbShape(
+        enabledThumbRadius: 12,
+        elevation: 3,
+      ),
       thumbColor: Colors.white,
       trackHeight: 5,
     ),
     snackBarTheme: const SnackBarThemeData(behavior: SnackBarBehavior.floating),
     inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+      enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(color: accentColor),
         borderRadius: BorderRadius.circular(8),
@@ -150,10 +146,8 @@ ThemeData _createGlobalThemeData({
       ),
     ),
     checkboxTheme: CheckboxThemeData(
-      fillColor: MaterialStateProperty.all(primarySwatch),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4),
-      ),
+      fillColor: WidgetStateProperty.all(primarySwatch),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
     ),
   );
 }

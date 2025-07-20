@@ -10,9 +10,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 /// {@endtemplate}
 class LoadingManager {
   /// {@macro LoadingManager}
-  LoadingManager({
-    this.initialMessage = 'Loading',
-  });
+  LoadingManager({this.initialMessage = 'Loading'});
 
   /// The initial message of the loading.
   String initialMessage;
@@ -55,10 +53,7 @@ class LoadingManager {
 /// {@endtemplate}
 class LoadingDialogManager {
   /// {@macro LoadingDialogManager}
-  LoadingDialogManager(
-    this._globalNavigationKey,
-    this._loadingManager,
-  );
+  LoadingDialogManager(this._globalNavigationKey, this._loadingManager);
 
   final GlobalKey<NavigatorState> _globalNavigationKey;
   final LoadingManager _loadingManager;
@@ -75,7 +70,7 @@ class LoadingDialogManager {
     if (isLoading) {
       SmartDialog.show(
         clickMaskDismiss: false,
-        backDismiss: false,
+        backType: SmartBackType.block,
         bindPage: true,
         tag: 'loading',
         builder: (globalContext) {
@@ -85,8 +80,10 @@ class LoadingDialogManager {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Container(
                 height: 90,
-                padding:
-                    const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 14,
+                  horizontal: 16,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(4),
@@ -121,9 +118,7 @@ class LoadingDialogManager {
         },
       );
     } else {
-      SmartDialog.dismiss(
-        tag: 'loading',
-      );
+      SmartDialog.dismiss(tag: 'loading');
     }
   }
 }

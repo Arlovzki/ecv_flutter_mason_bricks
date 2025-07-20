@@ -1,6 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
-// // ignore_for_file: avoid_dynamic_calls
-
 // import 'package:core/device_info/device_info.dart';
 // import 'package:core/environment_configuration.dart';
 // import 'package:core/logger/logger.dart';

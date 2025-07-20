@@ -48,7 +48,7 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
-    <!-- <queries>
+    <queries>
         <!-- If your app opens https URLs -->
         <intent>
             <action android:name="android.intent.action.VIEW"/>
@@ -67,10 +67,10 @@
         <intent>
             <action android:name="android.support.customtabs.action.CustomTabsService"/>
         </intent>
-    </queries> -->
-
-  <!-- <uses-permission
-    android:name="android.permission.CAMERA"/>
+    </queries>
+<!-- 
+  <uses-permission
+    android:name="android.permission.CAMERA"/> -->
   <!-- Permissions options for the `microphone` or `speech` group -->
-  <uses-permission android:name="android.permission.RECORD_AUDIO" /> -->
+  <!-- <uses-permission android:name="android.permission.RECORD_AUDIO" /> -->
 </manifest>

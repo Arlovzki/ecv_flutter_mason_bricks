@@ -1,5 +1,3 @@
-// ignore_for_file: library_private_types_in_public_api, unnecessary_overrides
-
 import 'dart:developer';
 
 import 'package:application/application.dart';
@@ -39,16 +37,13 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    return _MainAppBuilder(
-      focusNode: _focusNode,
-    );
+    return _MainAppBuilder(focusNode: _focusNode);
   }
 }
 
 class _MainAppBuilder extends StatelessWidget {
-  const _MainAppBuilder({
-    required FocusNode focusNode,
-  }) : _focusNode = focusNode;
+  const _MainAppBuilder({required FocusNode focusNode})
+    : _focusNode = focusNode;
 
   final FocusNode _focusNode;
 
@@ -141,21 +136,21 @@ class _SystemUIOverlayHandlerState extends State<_SystemUIOverlayHandler>
     super.dispose();
   }
 
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    super.didChangeAppLifecycleState(state);
+  // @override
+  // void didChangeAppLifecycleState(AppLifecycleState state) {
+  //   super.didChangeAppLifecycleState(state);
 
-    // There are cases that the system ui overlay change while the app is at
-    // the background.
-    //
-    // If the app state has returned in the foregroned, then ensure that the
-    // system ui overlay is updated
+  //   // There are cases that the system ui overlay change while the app is at
+  //   // the background.
+  //   //
+  //   // If the app state has returned in the foregroned, then ensure that the
+  //   // system ui overlay is updated
 
-    // UNCOMMENT THIS IF DARK MODE IS NEEDED!!
-    // if (state == AppLifecycleState.resumed) {
-    //   _updateSystemUIOverlay(BlocProvider.of<ThemeCubit>(context).state);
-    // }
-  }
+  //   // UNCOMMENT THIS IF DARK MODE IS NEEDED!!
+  //   // if (state == AppLifecycleState.resumed) {
+  //   //   _updateSystemUIOverlay(BlocProvider.of<ThemeCubit>(context).state);
+  //   // }
+  // }
 
   @override
   Widget build(BuildContext context) {

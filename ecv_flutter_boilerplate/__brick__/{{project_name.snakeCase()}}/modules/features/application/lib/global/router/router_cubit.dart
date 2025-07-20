@@ -1,5 +1,3 @@
-// ignore_for_file: comment_references, avoid_redundant_argument_values, depend_on_referenced_packages
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -86,18 +84,18 @@ class RouterState with EquatableMixin {
 
   @override
   List<Object?> get props => [
-        isInitializing,
-        isLoggedIn,
-        isLoggingIn,
-        isRegistering,
-        isAccountUnverified,
-        isIncompleteProfile,
-        isCompletingProfile,
-        isResettingPassword,
-        hasNetworkError,
-        hasUnhandledError,
-        // authUserInfo,
-      ];
+    isInitializing,
+    isLoggedIn,
+    isLoggingIn,
+    isRegistering,
+    isAccountUnverified,
+    isIncompleteProfile,
+    isCompletingProfile,
+    isResettingPassword,
+    hasNetworkError,
+    hasUnhandledError,
+    // authUserInfo,
+  ];
 
   @override
   String toString() {
@@ -178,9 +176,7 @@ class RouterCubit extends Cubit<RouterState> {
   }
 
   /// Sets the [isCompletingProfile] state.
-  void isCompletingProfile({
-    required bool isCompletingProfile,
-  }) {
+  void isCompletingProfile({required bool isCompletingProfile}) {
     if (state.isCompletingProfile == isCompletingProfile) {
       return;
     }
@@ -199,11 +195,7 @@ class RouterCubit extends Cubit<RouterState> {
       return;
     }
 
-    emit(
-      state.copyWith(
-        isIncompleteProfile: isIncompleteProfile,
-      ),
-    );
+    emit(state.copyWith(isIncompleteProfile: isIncompleteProfile));
   }
 
   /// Sets the [isResettingPassword] state.

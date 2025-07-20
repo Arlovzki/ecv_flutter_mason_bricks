@@ -15,18 +15,18 @@ dependencies:
     path: ../features/application
   codenic_logger: ^4.0.2
   dartz: ^0.10.1
-  device_info_plus: ^10.1.1
+  device_info_plus: ^11.5.0
   domain:
     path: ../features/domain
   flutter:
     sdk: flutter
-  get_it: ^7.7.0
+  get_it: ^8.0.3
   infrastructure:
     path: ../features/infrastructure
-  intl: ^0.19.0
+  intl: ^0.20.2
   logging: ^1.2.0
   package_info_plus: ^8.0.1
-  permission_handler: ^11.3.1
+  permission_handler: ^12.0.1
   uuid: ^4.4.2
 
 dev_dependencies:

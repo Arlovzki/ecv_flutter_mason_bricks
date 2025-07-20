@@ -1,5 +1,3 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -22,9 +20,10 @@ Future<void> main() async {
   await Future.wait([
     // Firebase.initializeApp(),
     sl.initialize(),
-    SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
-    ),
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]),
     // initializePackageInfo(),
     // initializeDeviceInfo(),
   ]);
@@ -62,12 +61,13 @@ Future<void> main() async {
   // Do not place new code below
 }
 
-/// Logger is a package from the Dart team. While you can just simply use print()
-/// to easily print to the debug console, using a fully-blown logger allows you to
-/// easily set up multiple logging "levels" - e.g. INFO, WARNING, ERROR.
+/// Logger is a package from the Dart team.
+/// While you can just simply use print()
+/// to easily print to the debug console, using a fully-blown logger allows
+/// you to easily set up multiple logging "levels" - e.g. INFO, WARNING, ERROR.
 ///
-/// Chopper already uses the Logger package. Printing the logs to the console requires
-/// the following setup.
+/// Chopper already uses the Logger package. Printing the logs to the console
+/// requires the following setup.
 void _setupLogging() {
   // Print long texts in the console
   void printWrapped(String text) {
@@ -83,7 +83,8 @@ void _setupLogging() {
 // /// Request tracking authorization on IOS devices. If already authorized or the
 // /// device is Android, then enable advertiser tracking in [FacebookAppEvents].
 // Future<void> _requestTrackingAuthorization() async {
-//   final result = await AppTrackingTransparency.requestTrackingAuthorization();
+//   final result = await AppTrackingTransparency.
+// requestTrackingAuthorization();
 
 //   if (result == TrackingStatus.authorized ||
 //       result == TrackingStatus.notSupported) {

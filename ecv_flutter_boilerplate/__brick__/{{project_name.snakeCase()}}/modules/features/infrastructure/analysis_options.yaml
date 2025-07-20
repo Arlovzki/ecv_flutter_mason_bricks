@@ -14,3 +14,4 @@ linter:
     prefer_int_literals: false
     require_trailing_commas: false
     non_constant_identifier_names: false
+    document_ignores: true

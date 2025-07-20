@@ -1,12 +1,14 @@
 /// Class represents the environment values for the mobile app.
 class Env {
   /// Represents the encryption key used for preferences.
-  static const preferencesEncryptionKey =
-      String.fromEnvironment('PREFERENCES_ENCRYPTION_KEY');
+  static const preferencesEncryptionKey = String.fromEnvironment(
+    'PREFERENCES_ENCRYPTION_KEY',
+  );
 
   /// Represents the initialization vector (IV) used for preferences encryption.
-  static const preferencesInitializationVectorBase64 =
-      String.fromEnvironment('PREFRENCES_INITIALIZATION_VECTOR_BASE64');
+  static const preferencesInitializationVectorBase64 = String.fromEnvironment(
+    'PREFERENCES_INITIALIZATION_VECTOR_BASE64',
+  );
 
   /// Represents the base URL for the global API.
   static const globalAPIBaseURL = String.fromEnvironment('GLOBAL_API_BASE_URL');

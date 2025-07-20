@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:infrastructure/infrastructure.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -16,8 +14,8 @@ class GlobalAPIBaseSuccessResponseBody
 
   /// Constructs a [GlobalAPIBaseSuccessResponseBody] instance from a JSON object.
   factory GlobalAPIBaseSuccessResponseBody.fromJson(
-          Map<String, dynamic> json) =>
-      _$GlobalAPIBaseSuccessResponseBodyFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$GlobalAPIBaseSuccessResponseBodyFromJson(json);
 
   /// An optional message associated with the success response.
   final String? message;

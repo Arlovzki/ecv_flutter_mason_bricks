@@ -1,5 +1,3 @@
-// ignore_for_file: comment_references
-
 import 'package:core/core.dart';
 import 'package:dartz/dartz.dart';
 import 'package:domain/domain.dart';
@@ -39,13 +37,14 @@ Future<Either<Failure, T>> convertExceptionIfThrown<T>({
 
     return await extendedExceptionConverters
         .fold<Future<Either<Failure, T>> Function()>(
-      action,
-      (previousValue, element) => () => element.call(
-            action: previousValue,
-            logger: logger,
-            messageLog: messageLog,
-          ),
-    )();
+          action,
+          (previousValue, element) =>
+              () => element.call(
+                action: previousValue,
+                logger: logger,
+                messageLog: messageLog,
+              ),
+        )();
   } catch (exception, stackTrace) {
     logger.error(
       messageLog..message = 'Exception thrown is a non-exception data type',

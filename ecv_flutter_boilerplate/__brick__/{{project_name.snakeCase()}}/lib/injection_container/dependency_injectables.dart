@@ -7,57 +7,49 @@ part of 'injection_container.dart';
 /// NOTE: Sort injectables alphabetically.
 Future<void> injectDependencies(GetIt serviceLocator) async {
   // AAA
-  serviceLocator.registerLazySingleton<AppLinks>(() => AppLinks());
-  // BBB
-  // CCC
-  // DDD
-  // EEE
-  // FFF
-
-  // serviceLocator
-  //     .registerLazySingleton<FacebookAppEvents>(() => FacebookAppEvents());
-
-  // serviceLocator.registerLazySingleton<FirebaseAnalytics>(
-  //   () => FirebaseAnalytics.instance,
-  // );
-
-  // serviceLocator.registerLazySingleton<FirebaseAnalyticsObserver>(
-  //   () => FirebaseAnalyticsObserver(analytics: serviceLocator()),
-  // );
-
-  // serviceLocator.registerLazySingleton<FirebaseCrashlytics>(
-  //   () => FirebaseCrashlytics.instance,
-  // );
-
-  // serviceLocator.registerLazySingleton<FirebaseDynamicLinks>(
-  //   () => FirebaseDynamicLinks.instance,
-  // );
-
-  // serviceLocator.registerLazySingleton<FirebaseMessaging>(
-  //   () => FirebaseMessaging.instance,
-  // );
-
-  // serviceLocator.registerLazySingleton<FlutterLocalNotificationsPlugin>(
-  //   () => FlutterLocalNotificationsPlugin(),
-  // );
-
-  // GGG
-  // HHH
-  // III
-  // serviceLocator.registerLazySingleton<InAppReview>(
-  //   () => InAppReview.instance,
-  // );
-  // JJJ
-  // KKK
-  // LLL
-  serviceLocator.registerLazySingleton<LoadingManager>(() => LoadingManager());
-
-  serviceLocator.registerLazySingleton<LoadingDialogManager>(
-    () => LoadingDialogManager(
-      AppRouter.rootNavigatorKey,
-      serviceLocator<LoadingManager>(),
-    ),
-  );
+  serviceLocator
+    ..registerLazySingleton<AppLinks>(AppLinks.new)
+    // BBB
+    // CCC
+    // DDD
+    // EEE
+    // FFF
+    // serviceLocator
+    //     .registerLazySingleton<FacebookAppEvents>(() => FacebookAppEvents());
+    // serviceLocator.registerLazySingleton<FirebaseAnalytics>(
+    //   () => FirebaseAnalytics.instance,
+    // );
+    // serviceLocator.registerLazySingleton<FirebaseAnalyticsObserver>(
+    //   () => FirebaseAnalyticsObserver(analytics: serviceLocator()),
+    // );
+    // serviceLocator.registerLazySingleton<FirebaseCrashlytics>(
+    //   () => FirebaseCrashlytics.instance,
+    // );
+    // serviceLocator.registerLazySingleton<FirebaseDynamicLinks>(
+    //   () => FirebaseDynamicLinks.instance,
+    // );
+    // serviceLocator.registerLazySingleton<FirebaseMessaging>(
+    //   () => FirebaseMessaging.instance,
+    // );
+    // serviceLocator.registerLazySingleton<FlutterLocalNotificationsPlugin>(
+    //   () => FlutterLocalNotificationsPlugin(),
+    // );
+    // GGG
+    // HHH
+    // III
+    // serviceLocator.registerLazySingleton<InAppReview>(
+    //   () => InAppReview.instance,
+    // );
+    // JJJ
+    // KKK
+    // LLL
+    ..registerLazySingleton<LoadingManager>(LoadingManager.new)
+    ..registerLazySingleton<LoadingDialogManager>(
+      () => LoadingDialogManager(
+        AppRouter.rootNavigatorKey,
+        serviceLocator<LoadingManager>(),
+      ),
+    );
   // MMM
   // NNN
   // OOO

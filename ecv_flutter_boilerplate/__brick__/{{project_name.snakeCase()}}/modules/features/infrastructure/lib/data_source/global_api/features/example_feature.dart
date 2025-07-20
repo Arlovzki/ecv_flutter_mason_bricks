@@ -5,13 +5,12 @@ import 'package:infrastructure/infrastructure.dart';
 part 'example_feature.chopper.dart';
 
 @ChopperApi(baseUrl: 'example')
-
 /// {@template ExampleFeature}
 /// An abstract class representing an example feature service.
 /// {@endtemplate}
 abstract class ExampleFeature extends ChopperService {
   /// Example API endpoint.
-  @Post(path: '/')
+  @POST(path: '/')
   Future<Response<GlobalAPIBaseSuccessResponseBody>> example({
     @Body() required ExampleRequestBody body,
   });

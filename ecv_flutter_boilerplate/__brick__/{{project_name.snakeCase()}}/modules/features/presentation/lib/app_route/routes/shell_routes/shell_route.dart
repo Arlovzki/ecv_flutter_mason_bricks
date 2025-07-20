@@ -3,9 +3,7 @@ part of '../../app_router.dart';
 /// {@template ShellRoute}
 /// A route that opens the [ShellScreen].
 /// {@endtemplate}
-@TypedStatefulShellRoute<ShellRoute>(
-  branches: shellBranches,
-)
+@TypedStatefulShellRoute<ShellRoute>(branches: shellBranches)
 class ShellRoute extends StatefulShellRouteData {
   /// {@macro ShellRoute}
   const ShellRoute();
@@ -54,7 +52,7 @@ class BranchProfileData extends StatefulShellBranchData {
 }
 
 /// Shell branches for the [ShellRoute].
-const shellBranches = [
+const List<TypedStatefulShellBranch<StatefulShellBranchData>> shellBranches = [
   TypedStatefulShellBranch<BranchHomeData>(
     routes: <TypedRoute<RouteData>>[
       TypedGoRoute<HomeRoute>(
